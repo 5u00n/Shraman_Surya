@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+            android:id="@+id/about_backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:contentDescription="@string/back_button"
+            android:padding="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"/>
+
+            <!-- Title 'About Us' -->
+            <TextView
+                android:gravity="center"
+                android:id="@+id/titleAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/about_us"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#000000"/>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <!-- Beneficiary Section -->
+
+    <!-- Description for Beneficiary Section -->
+    <TextView
+        android:id="@+id/beneficiaryLabel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/seed"
+        android:text="@string/beneficiary1"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:background="@color/seed"
+        android:id="@+id/beneficiaryDescription"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="20dp"
+        android:layout_below="@id/beneficiaryLabel"
+        android:layout_centerHorizontal="true"
+        android:text="@string/beneficiary_description" />
+
+    <!-- Inspiration Section -->
+    <TextView
+        android:background="@color/seed"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/beneficiaryDescription"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:text="@string/beneficiary2" />
+
+    <!-- Description for Inspiration Section -->
+    <TextView
+        android:background="@color/seed"
+        android:id="@+id/inspirationDescription"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:text="@string/beneficiary_description" />
+
+
+
+        <TextView
+            android:background="#ADD8E6"
+            android:id="@+id/designCreditLabel"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:layout_margin="20dp"
+            android:text="@string/design_credit" />
+
+        <TextView
+            android:id="@+id/designCreditName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/design_credit_name" />
+
+        <TextView
+            android:id="@+id/designCreditLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/design_credit_location" />
+
+
+</LinearLayout>

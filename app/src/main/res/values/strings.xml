@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Shraman Surya</string>
+    <string name="about_us">About Us</string>
+    <string name="back_button">Back Button</string>
+    <string name="design_credit">: Designed and developed By :</string>
+    <string name="beneficiary1">: Labharthi :</string>
+    <string name="beneficiary2">: Prerna Se :</string>
+    <string name="beneficiary_description">गुरु अमृत सद्भावना चेरिटेबल संस्था सारण जोधपु</string>
+    <string name="design_credit_name">"Kesari Kreations \nVansh Duggar "</string>
+    <string name="design_credit_location">Udaipur, Rajasthan</string>
+    <string name="Profile">Profile</string>
+    <string name="RegisterProfile">Profile Registration</string>
+</resources>
