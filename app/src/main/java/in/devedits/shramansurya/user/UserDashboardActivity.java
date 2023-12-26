@@ -105,7 +105,7 @@ public class UserDashboardActivity extends AppCompatActivity {
                         startActivity(new Intent(UserDashboardActivity.this, AboutUsActivity.class));
                         break;
                     case "10":
-                        startActivity(new Intent(UserDashboardActivity.this, ProfileActivity.class));
+                        startActivity(new Intent(UserDashboardActivity.this, RegisterActivity.class));
                         break;
                     case "11":
                         startActivity(new Intent(UserDashboardActivity.this, AboutUsActivity.class));

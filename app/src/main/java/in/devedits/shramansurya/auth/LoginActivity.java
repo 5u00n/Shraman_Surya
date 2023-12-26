@@ -40,6 +40,8 @@ public class LoginActivity extends AppCompatActivity {
 
     Context context;
 
+    String number;
+
     String countrycode,phonenumber,codesent;
 
     FirebaseAuth auth;
@@ -86,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
        otp_button.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               String number;
+
                number = number_txt.getText().toString();
                if (number.isEmpty()) {
                    Toast.makeText(getApplicationContext(), "Please Enter Your number", Toast.LENGTH_SHORT).show();
@@ -197,13 +199,17 @@ public class LoginActivity extends AppCompatActivity {
                     if(snapshot.exists()){
                         if(snapshot.child("uType").exists() && snapshot.child("uType").getValue().toString().equals("Admin")){
                             //Go to admin
+                            ref.child("profiles").child(auth.getUid()).child("mob_no").setValue(number);
                             intent[0] = new Intent(context, AdminActivity.class);
                         }else{
                             //Go to Users
+                            ref.child("profiles").child(auth.getUid()).child("mob_no").setValue(number);
                             intent[0] = new Intent(context, UserDashboardActivity.class);
                         }
                     }else{
                         //Go to Set Users Details
+
+                        ref.child("profiles").child(auth.getUid()).child("mob_no").setValue(number);
                         intent[0] = new Intent(context, RegisterActivity.class);
                     }
                     startActivity(intent[0]);

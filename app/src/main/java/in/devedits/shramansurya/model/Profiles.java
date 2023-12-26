@@ -4,6 +4,9 @@ public class Profiles {
 
     String Uid, name, img_url, is_married, birthday, anniversary,gender,email,UType;
 
+    public Profiles() {
+    }
+
     public Profiles(String uid, String name, String img_url, String is_married, String birthday, String anniversary, String gender, String email, String UType) {
         Uid = uid;
         this.name = name;

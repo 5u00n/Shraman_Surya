@@ -6,42 +6,43 @@
     android:background="@drawable/main"
     android:orientation="vertical">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:background="#56FFFFFF"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:layout_marginTop="?attr/actionBarSize">
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="#56FFFFFF"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20px">
 
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/reg_back"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/baseline_arrow_back_24"/>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
-
-            <!-- Title 'About Us' -->
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/RegisterProfile"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#000000" />
+        <!-- Title 'About Us' -->
+        <TextView
+            android:id="@+id/reg_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/RegisterProfile"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#000000" />
 
 
-            <Button
-                android:layout_marginHorizontal="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Save and Finish"/>
-</LinearLayout>
-        </androidx.appcompat.widget.Toolbar>
+        <Button
+            android:id="@+id/reg_save"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginHorizontal="20dp"
+            android:text="Save / Next" />
+    </LinearLayout>
 
-    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -60,21 +61,30 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:contentDescription="Profile Image"
+                android:id="@+id/reg_profile_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:contentDescription="Profile Image"
                 android:src="@drawable/baseline_person_pin_24" />
 
         </androidx.cardview.widget.CardView>
 
+        <TextView
+            android:id="@+id/reg_profilr_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:contentDescription="@string/Profile"
+            android:id="@+id/reg_edit_profile"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="bottom"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="104dp"
+            android:contentDescription="@string/Profile"
             android:src="@drawable/baseline_edit_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -83,8 +93,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -96,13 +104,16 @@
         android:paddingHorizontal="40dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_gravity="center"
+            android:id="@+id/reg_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:hint="Name ..."
+            android:inputType="text"
+            android:nextFocusDown="@id/reg_email"
+            android:nextFocusForward="@id/reg_email"
             android:textSize="18sp"
             android:textStyle="bold" />
-
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -112,13 +123,14 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:orientation="horizontal"
-        android:paddingVertical="10dp"
-        android:paddingHorizontal="40dp">
+        android:paddingHorizontal="40dp"
+        android:paddingVertical="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_gravity="center"
+            android:id="@+id/reg_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:hint="Email ..."
             android:inputType="textEmailAddress"
             android:textSize="18sp"
@@ -136,19 +148,21 @@
         android:orientation="horizontal"
         android:paddingHorizontal="40dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_gravity="center"
+        <TextView
+            android:background="@color/md_theme_dark_onSurface"
+            android:padding="20dp"
+            android:ems="10"
+            android:id="@+id/reg_dob"
+            android:editable="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="date"
+            android:layout_gravity="center"
             android:hint="Birthday ... "
             android:textSize="18sp"
             android:textStyle="bold" />
 
 
-
     </com.google.android.material.textfield.TextInputLayout>
-
 
 
     <LinearLayout
@@ -160,30 +174,34 @@
         android:paddingHorizontal="40dp">
 
         <TextView
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Gender : "
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <RadioGroup
-            android:orientation="horizontal"
+            android:id="@+id/reg_gender"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Male"/>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <RadioButton
+                android:checked="true"
+                android:id="@+id/male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Female"/>
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female" />
         </RadioGroup>
 
     </LinearLayout>
-
 
 
     <LinearLayout
@@ -195,28 +213,32 @@
         android:paddingHorizontal="40dp">
 
         <TextView
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Is Married : "
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <RadioGroup
-            android:orientation="horizontal"
+            android:id="@+id/reg_isMarried"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No"/>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <RadioButton
+                android:checked="true"
+                android:id="@+id/notMarried"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Yes"/>
+                android:text="No" />
+
+            <RadioButton
+                android:id="@+id/married"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
         </RadioGroup>
-
 
 
     </LinearLayout>
@@ -224,26 +246,27 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
         android:layout_marginVertical="10dp"
+        android:layout_marginLeft="20dp"
         android:orientation="horizontal"
         android:paddingHorizontal="40dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_gravity="center"
+        <TextView
+            android:background="@color/md_theme_dark_onSurface"
+            android:padding="20dp"
+            android:ems="10"
+            android:visibility="gone"
+            android:id="@+id/reg_anniversary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:hint="Anniversary Date ..."
+            android:inputType="text"
             android:textSize="18sp"
             android:textStyle="bold" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
-
 
 
 </LinearLayout>
