@@ -10,4 +10,7 @@
     <string name="design_credit_location">Udaipur, Rajasthan</string>
     <string name="Profile">Profile</string>
     <string name="RegisterProfile">Profile Registration</string>
+    <string name="birthday">Birthday</string>
+    <string name="birthdayAndAnniversary">Birthday and Anniversary</string>
+    <string name="anniversary">Anniversary</string>
 </resources>

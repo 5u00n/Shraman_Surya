@@ -17,7 +17,7 @@ import in.devedits.shramansurya.auth.RegisterActivity;
 import in.devedits.shramansurya.user.gridviews.AboutUsActivity;
 import in.devedits.shramansurya.user.dashboardhelper.DashboardRecyclerAdapter;
 import in.devedits.shramansurya.user.dashboardhelper.GridModels;
-import in.devedits.shramansurya.user.gridviews.ProfileActivity;
+import in.devedits.shramansurya.user.gridviews.BirthdayActivity;
 
 public class UserDashboardActivity extends AppCompatActivity {
 
@@ -102,7 +102,7 @@ public class UserDashboardActivity extends AppCompatActivity {
                         startActivity(new Intent(UserDashboardActivity.this, RegisterActivity.class));
                         break;
                     case "09":
-                        startActivity(new Intent(UserDashboardActivity.this, AboutUsActivity.class));
+                        startActivity(new Intent(UserDashboardActivity.this, BirthdayActivity.class));
                         break;
                     case "10":
                         startActivity(new Intent(UserDashboardActivity.this, RegisterActivity.class));
